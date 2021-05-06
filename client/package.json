@@ -4,8 +4,9 @@
 	"private": true,
 	"proxy": "http://localhost:3001/",
 	"dependencies": {
-		"axios": "^0.18.0",
 		"@craco/craco": "^6.1.2",
+		"axios": "^0.18.0",
+		"mapbox-gl": "^2.2.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-router-dom": "^5.1.2",
