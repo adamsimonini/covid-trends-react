@@ -12,9 +12,21 @@
 
 ## Running this app
 
-Clone the app from github.
-Run "npm i" from the root directory
-Run "npm start" from the root directory
+1. Clone the app from github.
+
+2. Seed database
+
+- execute the SQL within the database folder, starting with the schemes and then seeding the db.
+- start with the province seed, and then the health region seed
+- you'll need to perform a bulk import command within MySQL Workbench for the FSA data set (see database folder > datasets)
+
+3. Install dependancies
+   Run "npm i" from the root directory
+   Run "npm start" from the root directory
+
+4. The app should automatically start at http://localhost:3000/
+
+5. Visit http://localhost:3000/data and open the console to see the API returning data from the database
 
 ## **Tracking Success**
 

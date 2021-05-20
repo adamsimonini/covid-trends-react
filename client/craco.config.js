@@ -9,7 +9,8 @@ module.exports = {
 	webpack: {
 		alias: {
 			"@components": path.resolve(__dirname, "src/components/"),
-			"@pages": path.resolve(__dirname, "src/pages/")
+			"@pages": path.resolve(__dirname, "src/pages/"),
+			"@utilities": path.resolve(__dirname, "src/utils/")
 		}
 	},
 	eslint: {
