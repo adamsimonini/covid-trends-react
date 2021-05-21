@@ -5,6 +5,9 @@ const locationsController = require("../../controllers/locations/locationsContro
 router.route("/all-location-data").get(locationsController.findCompleteLocationDataAll);
 
 // Matches with "/api/books"
+router.route("/all-fsa-join-hr").get(locationsController.findFSAJoinHealthRegion);
+
+// Matches with "/api/books"
 router.route("/all-fsa").get(locationsController.findAllFSAs);
 
 // Matches with "/api/books/:id"

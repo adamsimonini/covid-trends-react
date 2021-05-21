@@ -35,11 +35,19 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
+	// HealthRegion.associate = function (models) {
+	// 	// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
+	// 	HealthRegion.hasMany(models.Location, {
+	// 		foreignKey: "hr_uid",
+	// 		sourceKey: "hr_uid"
+	// 	});
+	// };
+
 	HealthRegion.associate = function (models) {
 		// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
-		HealthRegion.hasMany(models.Location, {
-			foreignKey: "hr_uid",
-			sourceKey: "hr_uid"
+		HealthRegion.belongsTo(models.Province, {
+			foreignKey: "province_code",
+			targetKey: "province_code"
 		});
 	};
 

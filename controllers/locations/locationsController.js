@@ -11,13 +11,32 @@ module.exports = {
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(422).json(err));
 	},
-	findCompleteLocationDataAll: (req, res) => {
-		db.HealthRegion.findAll({
+	findFSAJoinHealthRegion: (req, res) => {
+		db.Location.findAll({
 			include: [
 				{
-					model: db.Location,
-					// as: "hr_uid",
-					attributes: ["forward_sortation_area"]
+					model: db.HealthRegion,
+					attributes: ["hr_uid", "province_code", "name_en", "name_fr", "website_en", "website_fr"]
+				}
+			]
+		}).then(function (dbLocations) {
+			res.json(dbLocations);
+		});
+	},
+	findCompleteLocationDataAll: (req, res) => {
+		db.Location.findAll({
+			include: [
+				{
+					model: db.HealthRegion,
+					attributes: ["hr_uid", "province_code", "name_en", "name_fr", "website_en", "website_fr"],
+					/*
+					nested includes statement
+					https://sequelize.org/master/manual/advanced-many-to-many.html#through-tables-versus-normal-tables-and-the--quot-super-many-to-many-association-quot-
+					*/
+					include: {
+						model: db.Province,
+						attributes: ["province_code", "full_name", "alpha_code", "region"]
+					}
 				}
 			]
 		}).then(function (dbLocations) {

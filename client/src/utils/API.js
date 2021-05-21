@@ -5,6 +5,9 @@ export default {
 	getCompleteLocationDataAll: function () {
 		return axios.get("/api/locations/all-location-data");
 	},
+	getFSAJoinHRAll: function () {
+		return axios.get("/api/locations/all-fsa-join-hr");
+	},
 	// Gets all formal sortation areas
 	getAllFSAs: function () {
 		return axios.get("/api/locations/all-fsa");
