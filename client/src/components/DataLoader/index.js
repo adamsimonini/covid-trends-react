@@ -6,15 +6,23 @@ function DataLoader() {
 	const [locations, setLocations] = useState([]);
 	const [provinces, setProvinces] = useState([]);
 	const [healthRegions, sethealthRegions] = useState([]);
+	const [fullLocationData, setFullLocationData] = useState([]);
 
 	useEffect(() => {
-		loadAllProvinces();
-		loadAllHealthRegions();
-		loadAllLocations();
+		loadCompleteLocationDataAll();
+		// loadAllProvinces();
+		// loadAllHealthRegions();
+		// loadAllFSAs();
 	}, []);
 
-	const loadAllLocations = () => {
-		API.getAllForwardSortationAreas()
+	const loadCompleteLocationDataAll = () => {
+		API.getCompleteLocationDataAll().then(res => {
+			console.log(res.data);
+		});
+	};
+
+	const loadAllFSAs = () => {
+		API.getAllFSAs()
 			.then(res => {
 				console.log(res.data);
 				setLocations(res.data);

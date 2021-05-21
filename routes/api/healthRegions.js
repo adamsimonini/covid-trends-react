@@ -5,6 +5,6 @@ const healthRegionsController = require("../../controllers/locations/healthRegio
 router.route("/").get(healthRegionsController.findALLHealthRegions);
 
 // Matches with "/api/books/:id"
-router.route("/:fsa").get(healthRegionsController.findHealthRegionByID);
+router.route("/:hr_uid").get(healthRegionsController.findHealthRegionByID);
 
 module.exports = router;

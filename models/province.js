@@ -21,7 +21,8 @@ module.exports = function (sequelize, DataTypes) {
 	Province.associate = function (models) {
 		// Each province has many health regions, and it's connected to health region via province's foreignKey "province_code"
 		Province.hasMany(models.HealthRegion, {
-			foreignKey: "province_code"
+			foreignKey: "province_code",
+			sourceKey: "province_code"
 		});
 	};
 

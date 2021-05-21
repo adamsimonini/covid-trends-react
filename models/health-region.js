@@ -7,9 +7,26 @@ module.exports = function (sequelize, DataTypes) {
 				primaryKey: true,
 				allowNull: false
 			},
-			province_code: DataTypes.INTEGER,
-			name_en: DataTypes.STRING,
-			name_fr: DataTypes.STRING
+			province_code: {
+				type: DataTypes.INTEGER,
+				allowNull: false
+			},
+			name_en: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			name_fr: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			website_en: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			website_fr: {
+				type: DataTypes.STRING,
+				allowNull: false
+			}
 		},
 		{
 			//configuration of the model
@@ -21,7 +38,8 @@ module.exports = function (sequelize, DataTypes) {
 	HealthRegion.associate = function (models) {
 		// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
 		HealthRegion.hasMany(models.Location, {
-			foreignKey: "hr_uid"
+			foreignKey: "hr_uid",
+			sourceKey: "hr_uid"
 		});
 	};
 
