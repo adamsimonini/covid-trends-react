@@ -5,6 +5,9 @@ export default {
 	getCompleteLocationDataAll: function () {
 		return axios.get("/api/locations/all-location-data");
 	},
+	findCompleteLocationDataForSingleFSA: function (fsa) {
+		return axios.get(`/api/locations/all-location-data/${fsa}`);
+	},
 	getFSAJoinHRAll: function () {
 		return axios.get("/api/locations/all-fsa-join-hr");
 	},

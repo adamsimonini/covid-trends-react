@@ -14,7 +14,7 @@ function App() {
 		<Router>
 			<LangToggle />
 			<div id="app">
-				<span>{t("Welcome to CTR")}</span>
+				<span>{t("welcomeToCTR")}</span>
 				{/* <Map /> */}
 				{/* <Stream /> */}
 				{/* <Recharts /> */}

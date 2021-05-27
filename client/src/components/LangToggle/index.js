@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 function LangToggle() {
+	const { t } = useTranslation();
 	const { i18n } = useTranslation();
 	console.log(i18n.language);
 
@@ -11,7 +12,7 @@ function LangToggle() {
 
 	return (
 		<>
-			<button onClick={() => changeLanguage()}>Change Language</button>
+			<button onClick={() => changeLanguage()}>{t("changeLanguage")}</button>
 		</>
 	);
 }

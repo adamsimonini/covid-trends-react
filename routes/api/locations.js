@@ -1,16 +1,16 @@
 const router = require("express").Router();
 const locationsController = require("../../controllers/locations/locationsController");
 
-// Matches with "/api/books"
+// the complete location data for all FSAs
 router.route("/all-location-data").get(locationsController.findCompleteLocationDataAll);
 
-// Matches with "/api/books"
-router.route("/all-fsa-join-hr").get(locationsController.findFSAJoinHealthRegion);
+// get complete location data for a single FSA, based on provided FSA
+router.route("/all-location-data/:fsa").get(locationsController.findCompleteLocationDataForSingleFSA);
 
-// Matches with "/api/books"
-router.route("/all-fsa").get(locationsController.findAllFSAs);
+// router.route("/all-fsa-join-hr").get(locationsController.findFSAJoinHealthRegion);
 
-// Matches with "/api/books/:id"
-router.route("/fsa/:fsa").get(locationsController.findFSAByID);
+// router.route("/all-fsa").get(locationsController.findAllFSAs);
+
+// router.route("/fsa/:fsa").get(locationsController.findFSAByID);
 
 module.exports = router;

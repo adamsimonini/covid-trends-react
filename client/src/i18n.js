@@ -6,12 +6,26 @@ import { initReactI18next } from "react-i18next";
 const resources = {
 	en: {
 		translation: {
-			"Welcome to CTR": "Welcome to COVID-Trends-React!"
+			welcomeToCTR: "Welcome to COVID-Trends-React!",
+			getAllLocationData: "Get all location data",
+			getAllLocationDataFSA: "Get all location data for an FSA",
+			dataLengthZero: "The data length is zero",
+			COVIDTrendsData: "COVIDTrends Data",
+			formalSortationArea: "Formal sortation area",
+			inputFirst3PostalCode: "Input the first 3 characters of a valid postal code",
+			changeLanguage: "Change language"
 		}
 	},
 	fr: {
 		translation: {
-			"Welcome to CTR": "Bienvenue à React-Tendances-COVID"
+			welcomeToCTR: "Bienvenue à React-Tendances-COVID",
+			getAllLocationData: "Obtenir toutes les données de localisation",
+			getAllLocationDataFSA: "Obtenir des données de localisation pour une zone",
+			dataLengthZero: "La longueur des données est zéro",
+			COVIDTrendsData: "Données TendancesCOVID",
+			formalSortationArea: "Zone de tri formelle",
+			inputFirst3PostalCode: "saisissez les 3 premiers caractères d'un code postal valide",
+			changeLanguage: "Changer de langue"
 		}
 	}
 };

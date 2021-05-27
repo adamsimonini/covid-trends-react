@@ -1,5 +1,6 @@
 USE covid_trends;
 
+INSERT INTO provinces SET province_code=1, full_name="Canada",	alpha_code="CA",	region="National";
 INSERT INTO provinces SET province_code=10, full_name="Newfoundland and Labrador",	alpha_code="NL",	region="Atlantic";
 INSERT INTO provinces SET province_code=11, full_name="Prince Edward Island",	alpha_code="PE",	region="Atlantic";
 INSERT INTO provinces SET province_code=12, full_name="Nova Scotia",	alpha_code="NS",	region="Atlantic";
@@ -13,3 +14,4 @@ INSERT INTO provinces SET province_code=59, full_name="British Columbia",	alpha_
 INSERT INTO provinces SET province_code=60, full_name="Yukon",	alpha_code="YT",	region="Territories";
 INSERT INTO provinces SET province_code=61, full_name="Northwest Territories",	alpha_code="NT",	region="Territories";
 INSERT INTO provinces SET province_code=62, full_name="Nunavut",	alpha_code="NU",	region="Territories";
+INSERT INTO provinces SET province_code=99, full_name="Repatriated",	alpha_code="RE",	region="National";

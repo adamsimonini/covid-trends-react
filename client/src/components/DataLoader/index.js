@@ -1,9 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import LocationData from "@components/LocationData";
 import API from "@utilities/API";
 import "./style.css";
+import { TextField, Button } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 
 function DataLoader() {
+	const { t } = useTranslation();
+	const [fsa, setFSA] = useState("");
 	// const [locations, setLocations] = useState([]);
 	// const [provinces, setProvinces] = useState([]);
 	// const [healthRegions, sethealthRegions] = useState([]);
@@ -23,6 +27,16 @@ function DataLoader() {
 		});
 	};
 
+	const loadCompleteLocationDataForSingleFSA = fsa => {
+		API.findCompleteLocationDataForSingleFSA(fsa).then(res => {
+			console.log(res.data);
+			setFullLocationData(res.data);
+		});
+	};
+
+	const updateFSA = e => {
+		setFSA(e.target.value);
+	};
 	// const loadAllFSAs = () => {
 	// 	API.getAllFSAs()
 	// 		.then(res => {
@@ -53,11 +67,34 @@ function DataLoader() {
 	return (
 		<>
 			<div>
-				<h1>COVIDTrends Data</h1>
+				<h1>{t("COVIDTrendsData")}</h1>
+				<form className="form" noValidate autoComplete="off">
+					<div>
+						<TextField onChange={updateFSA} label={t("formalSortationArea")} error={false} helperText={t("inputFirst3PostalCode")} inputProps={{ maxLength: 3 }} />
+						<Button
+							variant="contained"
+							color="primary"
+							onClick={() => {
+								loadCompleteLocationDataForSingleFSA(fsa);
+							}}
+						>
+							{t("getAllLocationDataFSA")}
+						</Button>
+					</div>
+					<Button
+						variant="contained"
+						color="secondary"
+						onClick={() => {
+							loadCompleteLocationDataAll();
+						}}
+					>
+						{t("getAllLocationData")}
+					</Button>
+				</form>
 				{fullLocationData.length ? ( //
 					<LocationData data={fullLocationData} />
 				) : (
-					<h3>Loading...</h3>
+					<h3>{t("dataLengthZero")}</h3>
 				)}
 			</div>
 		</>
