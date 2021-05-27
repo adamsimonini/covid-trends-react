@@ -13,7 +13,17 @@ const resources = {
 			COVIDTrendsData: "COVIDTrends Data",
 			formalSortationArea: "Formal sortation area",
 			inputFirst3PostalCode: "Input the first 3 characters of a valid postal code",
-			changeLanguage: "Change language"
+			changeLanguage: "Change language",
+			locationData: "Location Data",
+			healthRegionID: "Health Region ID",
+			provinceCode: "Province Code",
+			hrNameEn: "Health Region Name English",
+			hrNameFr: "Health Region Name French",
+			hrWebsiteEn: "Health Region Website English",
+			hrWebsiteFr: "Health Region Website French",
+			provinceName: "Province Name",
+			provinceAlphaCode: "Province Code",
+			region: "Region"
 		}
 	},
 	fr: {
@@ -25,7 +35,17 @@ const resources = {
 			COVIDTrendsData: "Données TendancesCOVID",
 			formalSortationArea: "Zone de tri formelle",
 			inputFirst3PostalCode: "saisissez les 3 premiers caractères d'un code postal valide",
-			changeLanguage: "Changer de langue"
+			changeLanguage: "Changer de langue",
+			locationData: "Données de localisation",
+			healthRegionID: "ID de la région sanitaire",
+			provinceCode: "Nom de la province",
+			hrNameEn: "Nom de la région sanitaire Anglais",
+			hrNameFr: "Nom de la région sociosanitaire Français",
+			hrWebsiteEn: "site de la région sanitaire anglaise",
+			hrWebsiteFr: "site de la région sanitaire française",
+			provinceName: "Nom de la province",
+			provinceAlphaCode: "Code alphabétique",
+			region: "Région"
 		}
 	}
 };
