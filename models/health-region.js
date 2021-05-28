@@ -41,7 +41,17 @@ module.exports = function (sequelize, DataTypes) {
 			foreignKey: "province_code",
 			targetKey: "province_code"
 		});
+
+		HealthRegion.belongsTo(models.Mobility, {
+			foreignKey: "hr_uid",
+			targetKey: "hr_uid",
+			allowNull: true
+		});
 	};
+
+	// HealthRegion.associate = function (models) {
+	// 	// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
+	// };
 
 	return HealthRegion;
 };

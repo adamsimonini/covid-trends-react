@@ -21,14 +21,14 @@ function DataLoader() {
 	}, []);
 
 	const loadCompleteLocationDataAll = () => {
-		API.getCompleteLocationDataAll().then(res => {
+		API.getCompleteDataAll().then(res => {
 			console.log(res.data);
 			setFullLocationData(res.data);
 		});
 	};
 
 	const loadCompleteLocationDataForSingleFSA = fsa => {
-		API.findCompleteLocationDataForSingleFSA(fsa).then(res => {
+		API.getCompleteLocationDataForSingleFSA(fsa).then(res => {
 			console.log(res.data);
 			setFullLocationData(res.data);
 		});
@@ -74,6 +74,7 @@ function DataLoader() {
 						<Button
 							variant="contained"
 							color="primary"
+							disabled={fsa.length !== 3}
 							onClick={() => {
 								loadCompleteLocationDataForSingleFSA(fsa);
 							}}

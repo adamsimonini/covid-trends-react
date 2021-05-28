@@ -7,7 +7,7 @@ router.route("/all-location-data").get(locationsController.findCompleteLocationD
 // get complete location data for a single FSA, based on provided FSA
 router.route("/all-location-data/:fsa").get(locationsController.findCompleteLocationDataForSingleFSA);
 
-// router.route("/all-fsa-join-hr").get(locationsController.findFSAJoinHealthRegion);
+router.route("/all-complete-data").get(locationsController.findCompleteDataAll);
 
 // router.route("/all-fsa").get(locationsController.findAllFSAs);
 
