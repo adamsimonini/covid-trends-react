@@ -47,8 +47,7 @@ module.exports = function (sequelize, DataTypes) {
 	// 		foreignKey: {
 	// 			name: "hr_uid",
 	// 			sourceKey: "hr_uid",
-	// 			allowNull: true,
-	// 			constraints: false
+	// 			allowNull: true
 	// 		}
 	// 	});
 	// };

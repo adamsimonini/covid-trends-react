@@ -23,7 +23,14 @@ const resources = {
 			hrWebsiteFr: "Health Region Website French",
 			provinceName: "Province Name",
 			provinceAlphaCode: "Province Code",
-			region: "Region"
+			region: "Region",
+			mobilityData: "Mobility Data",
+			date: "Date",
+			mobilityPercentChange: "Percent Change",
+			mobilityPercentChangePrevWeek: "Percent change last week",
+			mobility: "Mobility",
+			previousMobility: "Previous Mobility",
+			caseData: "Case Data"
 		}
 	},
 	fr: {
@@ -45,7 +52,14 @@ const resources = {
 			hrWebsiteFr: "site de la région sanitaire française",
 			provinceName: "Nom de la province",
 			provinceAlphaCode: "Code alphabétique",
-			region: "Région"
+			region: "Région",
+			mobilityData: "Données de mobilité",
+			date: "Date",
+			mobilityPercentChange: "Changement en pourcentage",
+			mobilityPercentChangePrevWeek: "Changement en pourcentage la semaine dernière",
+			mobility: "Mobilité",
+			previousMobility: "Mobilité précédente",
+			caseData: "Données de cas"
 		}
 	}
 };

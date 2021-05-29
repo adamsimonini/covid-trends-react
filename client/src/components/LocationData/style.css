@@ -1,3 +1,15 @@
-.location {
+.complete-card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
 	border-bottom: 1px solid black;
+}
+
+.data-box {
+	width: 33%;
+}
+
+.sortation-area {
+	width: 100%;
 }

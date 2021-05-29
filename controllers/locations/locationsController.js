@@ -28,19 +28,11 @@ module.exports = {
 			include: [
 				{
 					model: db.HealthRegion,
-					attributes: ["hr_uid", "province_code", "name_en", "name_fr", "website_en", "website_fr"],
-					/*
-					nested includes statement
-					https://sequelize.org/master/manual/advanced-many-to-many.html#through-tables-versus-normal-tables-and-the--quot-super-many-to-many-association-quot-
-					*/
-					include: {
-						model: db.Province,
-						attributes: ["province_code", "full_name", "alpha_code", "region"]
-					}
-					// include: {
-					// 	model: db.Mobility,
-					// 	attributes: ["date", "full_name", "pct_change_mobility", "prev_mobility"]
-					// }
+					attributes: ["hr_uid", "province_code", "name_en", "name_fr", "website_en", "website_fr"]
+				},
+				{
+					model: db.Province,
+					attributes: ["province_code", "full_name", "alpha_code", "region"]
 				}
 			]
 		}).then(function (dbLocations) {
@@ -64,12 +56,12 @@ module.exports = {
 						{
 							model: db.Mobility,
 							attributes: ["percent_change_prev_week_percent_stay", "pct_change_mobility"]
-						},
-						{
-							model: db.Province,
-							attributes: ["province_code", "full_name", "alpha_code", "region"]
 						}
 					]
+				},
+				{
+					model: db.Province,
+					attributes: ["province_code", "full_name", "alpha_code", "region"]
 				}
 			]
 		}).then(function (dbLocations) {
@@ -77,7 +69,6 @@ module.exports = {
 		});
 	},
 	findCompleteDataAll: (req, res) => {
-		console.log("finding complete data all");
 		db.Location.findAll({
 			include: [
 				{
@@ -89,14 +80,14 @@ module.exports = {
 					*/
 					include: [
 						{
-							model: db.Mobility,
-							attributes: ["percent_change_prev_week_percent_stay", "pct_change_mobility"]
-						},
-						{
-							model: db.Province,
-							attributes: ["province_code", "full_name", "alpha_code", "region"]
+							model: db.Mobility
+							// attributes: ["percent_change_prev_week_percent_stay", "pct_change_mobility"]
 						}
 					]
+				},
+				{
+					model: db.Province,
+					attributes: ["province_code", "full_name", "alpha_code", "region"]
 				}
 			]
 		}).then(function (dbLocations) {

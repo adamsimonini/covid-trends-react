@@ -18,5 +18,18 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
+	Province.associate = function (models) {
+		// Province.hasMany(models.Location, {
+		// 	foreignKey: "province_code",
+		// 	targetKey: "province_code"
+		// });
+		// Province.belongsTo(models.Location, {
+		// 	foreignKey: "province_code",
+		// 	targetKey: "province_code",
+		// 	allowNull: true,
+		// 	defaultValue: null
+		// });
+	};
+
 	return Province;
 };
