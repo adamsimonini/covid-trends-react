@@ -42,15 +42,16 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
-	// Mobility.associate = function (models) {
-	// 	Mobility.hasOne(models.HealthRegion, {
-	// 		foreignKey: {
-	// 			name: "hr_uid",
-	// 			sourceKey: "hr_uid",
-	// 			allowNull: true
-	// 		}
-	// 	});
-	// };
+	Mobility.associate = function (models) {
+		Mobility.belongsTo(models.HealthRegion, {
+			foreignKey: {
+				name: "hr_uid",
+				sourceKey: "hr_uid",
+				allowNull: true,
+				constraints: false
+			}
+		});
+	};
 	// Mobility.associate = function (models) {
 	// 	// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
 	// 	Mobility.hasOne(models.HealthRegion, {

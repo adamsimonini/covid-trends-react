@@ -7,7 +7,7 @@ module.exports = {
 		});
 	},
 	findFSAByID: (req, res) => {
-		db.Location.findById(req.params.id)
+		db.Location.findByPk(req.params.id)
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(422).json(err));
 	},

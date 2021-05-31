@@ -6,10 +6,6 @@ module.exports = function (sequelize, DataTypes) {
 				type: DataTypes.INTEGER,
 				primaryKey: true,
 				allowNull: false
-				// references: {
-				// 	model: "locations",
-				// 	key: "hr_uid"
-				// }
 			},
 			province_code: {
 				type: DataTypes.INTEGER,
@@ -41,10 +37,6 @@ module.exports = function (sequelize, DataTypes) {
 
 	HealthRegion.associate = function (models) {
 		// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
-		// HealthRegion.belongsTo(models.Location, {
-		// 	foreignKey: "hr_uid",
-		// 	targetKey: "hr_uid"
-		// });
 
 		HealthRegion.hasMany(models.Location, {
 			foreignKey: "hr_uid",
@@ -54,17 +46,13 @@ module.exports = function (sequelize, DataTypes) {
 			defaultValue: null
 		});
 
-		HealthRegion.belongsTo(models.Mobility, {
+		HealthRegion.hasOne(models.Mobility, {
 			foreignKey: "hr_uid",
 			targetKey: "hr_uid",
 			allowNull: true,
 			defaultValue: null
 		});
 	};
-
-	// HealthRegion.associate = function (models) {
-	// 	// Each health region has many locations, and it's connected to loctions via location's foreignKey "hr_uid"
-	// };
 
 	return HealthRegion;
 };

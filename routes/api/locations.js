@@ -2,10 +2,10 @@ const router = require("express").Router();
 const locationsController = require("../../controllers/locations/locationsController");
 
 // the complete location data for all FSAs
-router.route("/all-location-data").get(locationsController.findCompleteLocationDataAll);
+router.route("/get-all").get(locationsController.findCompleteLocationDataAll);
 
 // get complete location data for a single FSA, based on provided FSA
-router.route("/all-location-data/:fsa").get(locationsController.findCompleteLocationDataForSingleFSA);
+router.route("/:fsa").get(locationsController.findCompleteLocationDataForSingleFSA);
 
 router.route("/all-complete-data").get(locationsController.findCompleteDataAll);
 
