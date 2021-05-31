@@ -2,7 +2,6 @@ const db = require("../../models");
 // Defining methods for the booksController
 module.exports = {
 	findALLHealthRegions: function (req, res) {
-		console.log("getting all HRs...");
 		db.HealthRegion.findAll({}).then(function (dbHealthRegions) {
 			res.json(dbHealthRegions);
 		});

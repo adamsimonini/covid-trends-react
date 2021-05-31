@@ -2,15 +2,12 @@ import axios from "axios";
 
 export default {
 	// Gets all complete locations data
-	getCompleteLocationDataAll: function () {
-		return axios.get("/api/locations/all-location-data");
+	getCompleteDataAll: function () {
+		return axios.get("/api/locations/get-all");
 	},
 	getCompleteLocationDataForSingleFSA: function (fsa) {
-		return axios.get(`/api/locations/all-location-data/${fsa}`);
-	},
-	getCompleteDataAll: function () {
-		return axios.get("/api/locations/all-complete-data");
-	},
+		return axios.get(`/api/locations/${fsa}`);
+	}
 	// Gets all formal sortation areas
 	// getAllFSAs: function () {
 	// 	return axios.get("/api/locations/all-fsa");
