@@ -2,3 +2,8 @@
 	height: 500px;
 	width: 80%;
 }
+
+#root {
+	height: 100vh;
+	padding: 3%;
+}

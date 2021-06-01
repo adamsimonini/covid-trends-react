@@ -16,7 +16,7 @@ function LocationData({ data }) {
 								<h4>{t("locationData")}</h4>
 								<ul>
 									<li>
-										<b>{t("healthRegionID")}:</b> {location.hr_uid}
+										<b>{t("healthRegionID")}:</b> {location.HealthRegion.hr_uid}
 									</li>
 									<li>
 										<b>{t("hrNameEn")}:</b> {location.HealthRegion.name_en}
