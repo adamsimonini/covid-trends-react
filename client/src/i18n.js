@@ -6,6 +6,8 @@ import { initReactI18next } from "react-i18next";
 const resources = {
 	en: {
 		translation: {
+			home: "Home",
+			exploreAPI: "Explore Data API",
 			welcomeToCTR: "Welcome to COVID-Trends-React!",
 			getAllLocationData: "Get all location data",
 			getAllLocationDataFSA: "Get all location data for an FSA",
@@ -35,6 +37,8 @@ const resources = {
 	},
 	fr: {
 		translation: {
+			home: "Domicile",
+			exploreAPI: "Explorez l'API de données",
 			welcomeToCTR: "Bienvenue à React-Tendances-COVID",
 			getAllLocationData: "Obtenir toutes les données de localisation",
 			getAllLocationDataFSA: "Obtenir des données de localisation pour une zone",
@@ -69,9 +73,7 @@ i18n
 	.init({
 		resources,
 		lng: "en",
-
 		keySeparator: false, // we do not use keys in form messages.welcome
-
 		interpolation: {
 			escapeValue: false // react already safes from xss
 		}
