@@ -87,6 +87,6 @@ const provinceSeed = [
 	}
 ];
 
-const seedProvince = () => provinceModel.bulkCreate(provinceSeed);
+const seedProvinceTable = () => provinceModel.bulkCreate(provinceSeed);
 
-module.exports = seedProvince;
+module.exports = seedProvinceTable;

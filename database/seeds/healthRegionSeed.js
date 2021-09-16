@@ -43,6 +43,6 @@ const healthRegionSeed = [
 	}
 ];
 
-const seedHealthRegion = () => healthRegioneModel.bulkCreate(healthRegionSeed);
+const seedHealthRegionTable = () => healthRegioneModel.bulkCreate(healthRegionSeed);
 
-module.exports = seedHealthRegion;
+module.exports = seedHealthRegionTable;

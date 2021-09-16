@@ -28,6 +28,6 @@ const locationSeed = [
 	}
 ];
 
-const seedLocation = () => locationModel.bulkCreate(locationSeed);
+const seedLocationTable = () => locationModel.bulkCreate(locationSeed);
 
-module.exports = seedLocation;
+module.exports = seedLocationTable;
