@@ -1,12 +1,15 @@
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
+let sequelize;
+
 switch (process.env.NODE_ENV) {
 	case "production":
 		dbCridentials = {
 			use_env_variable: "JAWSDB_URL",
 			dialect: "mysql"
 		};
+		sequelize = new Sequelize(dbCridentials.use_env_variable, dbCridentials);
 		break;
 	default:
 		dbCridentials = {
@@ -19,8 +22,7 @@ switch (process.env.NODE_ENV) {
 				port: 3306
 			}
 		};
+		sequelize = new Sequelize(dbCridentials.database, dbCridentials.username, dbCridentials.password, dbCridentials.connection, dbCridentials);
 }
-
-const sequelize = new Sequelize(dbCridentials.database, dbCridentials.username, dbCridentials.password, dbCridentials.connection, dbCridentials);
 
 module.exports = sequelize;
