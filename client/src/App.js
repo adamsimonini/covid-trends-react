@@ -17,7 +17,7 @@ function App() {
 		<Router>
 			<LangToggle />
 			<div id="app">
-				<h1>{t("welcomeToCTR")}</h1>
+				<h1>{t("welcomeToCDD")}</h1>
 				{/* These are different test components. Feel free to uncomment in order to see what they produce */}
 				{/* <Map /> */}
 				{/* <Stream /> */}
