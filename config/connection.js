@@ -9,7 +9,7 @@ switch (process.env.NODE_ENV) {
 			use_env_variable: "JAWSDB_URL",
 			dialect: "mysql"
 		};
-		sequelize = new Sequelize(dbCridentials.use_env_variable, dbCridentials);
+		sequelize = new Sequelize(dbCridentials.use_env_variable, dbCridentials.dialect, dbCridentials);
 		break;
 	default:
 		dbCridentials = {
@@ -22,7 +22,7 @@ switch (process.env.NODE_ENV) {
 				port: 3306
 			}
 		};
-		sequelize = new Sequelize(dbCridentials.database, dbCridentials.username, dbCridentials.password, dbCridentials.connection, dbCridentials.connection.dialect, dbCridentials);
+		sequelize = new Sequelize(dbCridentials.database, dbCridentials.username, dbCridentials.password, dbCridentials.connection, dbCridentials);
 }
 
 module.exports = sequelize;
