@@ -22,7 +22,7 @@ switch (process.env.NODE_ENV) {
 				port: 3306
 			}
 		};
-		sequelize = new Sequelize(dbCridentials.database, dbCridentials.username, dbCridentials.password, dbCridentials.connection, dbCridentials);
+		sequelize = new Sequelize(dbCridentials.database, dbCridentials.username, dbCridentials.password, dbCridentials.connection, dbCridentials.connection.dialect, dbCridentials);
 }
 
 module.exports = sequelize;
