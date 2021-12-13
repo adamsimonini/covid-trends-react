@@ -7,7 +7,9 @@ const getDBCridentials = () => {
 			dbCridentials = {
 				use_env_variable: "JAWSDB_URL",
 				connection: {
-					dialect: "mysql"
+					host: "uzb4o9e2oe257glt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+					dialect: "mysql",
+					port: 3306
 				}
 			};
 			break;
