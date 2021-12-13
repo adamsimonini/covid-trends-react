@@ -11,7 +11,7 @@ const db = {};
 let sequelize;
 
 if (process.env.NODE_ENV == "production") {
-	sequelize = new Sequelize(config.use_env_variable, null, null, { dialect: config.connection });
+	sequelize = new Sequelize(config.use_env_variable, null, null, { dialect: config.dialect });
 } else {
 	sequelize = new Sequelize(config.database, config.username, config.password, config.connection, config);
 }
