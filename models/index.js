@@ -8,7 +8,13 @@ const basename = path.basename(__filename);
 const config = require(__dirname + "/../config/config.js");
 const db = {};
 
-let sequelize = new Sequelize(config.database, config.username, config.password, config.connection, config);
+let sequelize;
+
+if (process.env.NODE_ENV == "production") {
+	sequelize = new Sequelize(config.use_env_variable, { dialect: config.connection });
+} else {
+	sequelize = new Sequelize(config.database, config.username, config.password, config.connection, config);
+}
 
 fs.readdirSync(__dirname)
 	.filter(file => {
