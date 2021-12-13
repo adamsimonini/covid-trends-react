@@ -6,7 +6,9 @@ const getDBCridentials = () => {
 		case "production":
 			dbCridentials = {
 				use_env_variable: "JAWSDB_URL",
-				dialect: "mysql"
+				connection: {
+					dialect: "mysql"
+				}
 			};
 			break;
 		default:
