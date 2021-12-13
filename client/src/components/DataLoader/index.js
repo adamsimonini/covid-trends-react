@@ -37,6 +37,14 @@ function DataLoader() {
 	const updateFSA = e => {
 		setFSA(e.target.value);
 	};
+
+	const preventRefresh = e => {
+		if (e.key == "Enter") {
+			e.preventDefault();
+			document.getElementById("getSingleFSAData").click();
+			return false;
+		}
+	};
 	// const loadAllFSAs = () => {
 	// 	API.getAllFSAs()
 	// 		.then(res => {
@@ -70,8 +78,9 @@ function DataLoader() {
 				<h1>{t("COVIDTrendsData")}</h1>
 				<form className="form" noValidate autoComplete="off">
 					<div>
-						<TextField onChange={updateFSA} label={t("formalSortationArea")} error={false} helperText={t("inputFirst3PostalCode")} inputProps={{ maxLength: 3 }} />
+						<TextField onKeyDown={preventRefresh} onChange={updateFSA} label={t("formalSortationArea")} error={false} helperText={t("inputFirst3PostalCode")} inputProps={{ maxLength: 3 }} />
 						<Button
+							id="getSingleFSAData"
 							variant="contained"
 							color="primary"
 							disabled={fsa.length !== 3}
